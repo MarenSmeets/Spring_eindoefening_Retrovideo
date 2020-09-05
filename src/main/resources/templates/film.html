@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title=${film}==null ? 'film niet gevonden' : ${film.titel} )"></head>
+
+<body>
+
+<nav th:replace="fragments::menu"></nav>
+
+<h1 th:if="${film} == null">Film niet gevonden.</h1>
+
+<div th:if="${film} != null" th:object="${film}">
+    <h1 th:text="${film.titel}"></h1>
+    <p>
+        <img th:src="@{/img/{id}.jpg(id=*{id})}" th:alt="*{titel}">
+    </p>
+    <form method="post" th:action="@{/mandje/toevoegen}">
+        <ul>
+            <li>Prijs</li>
+            <li class="filmData" th:text="|&euro; *{prijs}|"></li>
+            <li>Voorraad</li>
+            <li class="filmData" th:text="*{voorraad}"></li>
+            <li>Gereserveerd</li>
+            <li class="filmData" th:text="*{gereserveerd}"></li>
+            <li>Beschikbaar</li>
+            <li class="filmData" th:text="*{aantalBeschikbaar()}"></li>
+        </ul>
+        <input type="hidden" name="id" th:value="*{id}"/>
+        <button th:if="${film.aantalBeschikbaar()} > 0" >In Mandje</button>
+    </form>
+</div>
+
+
+
+
+
+
+</body>
+
+</html>

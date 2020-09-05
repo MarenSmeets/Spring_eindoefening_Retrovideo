@@ -1,0 +1,19 @@
+<head th:fragment="head(title)" xmlns:th="http://www.thymeleaf.org">
+    <link rel="icon" th:href="@{/img/retrovideo.ico}" type="image/x-icon">
+    <title th:text="${title}"></title>
+    <link rel="stylesheet" th:href="@{/css/retroVideo.css}">
+</head>
+
+<nav  th:fragment="menu" xmlns:th="http://www.thymeleaf.org">
+    <ul >
+        <li><a th:href="@{/}">Genres</a></li>
+    </ul>
+</nav>
+
+<nav  th:fragment="menu2" xmlns:th="http://www.thymeleaf.org">
+    <ul >
+        <li><a th:href="@{/}">Genres</a></li>
+        <li><a th:href="@{/mandje}">Mandje</a></li>
+        <li><a th:href="@{/klanten}">Klant</a></li>
+    </ul>
+</nav>

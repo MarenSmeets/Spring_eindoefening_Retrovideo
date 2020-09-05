@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Rapport')"></head>
+
+<body>
+
+<nav th:replace="fragments::menu"></nav>
+
+<h1>Rapport</h1>
+
+<p th:if="${mislukteReservaties.size() == 0}">De reservatie is OK.</p>
+
+<div th:if="${mislukteReservaties.size() > 0}">
+    <p> De reservatie is mislukt voor volgende films : </p>
+        <ol>
+            <li th:each="titel:${mislukteReservaties}" th:text="${titel}"></li>
+        </ol>
+</div>
+
+
+</body>
+</html>

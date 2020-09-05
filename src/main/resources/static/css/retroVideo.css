@@ -1,0 +1,133 @@
+
+body {
+    font-family: Arial, "DejaVu Sans", Verdana;
+    margin: 0 auto;
+    width: 90%;
+    padding: 1em;
+}
+
+ul li {
+    display: inline;
+    padding: 0.5em 0.5em;
+}
+
+nav ul li{
+    display: inline;
+    padding: 5em 1em 0em 0em ;
+}
+
+form ul {
+    padding-left: 0;
+}
+
+form ul li {
+    display: block ;
+    text-indent: 0em;
+    list-style-type: none;
+    padding: 0;
+}
+
+.filmData {
+    font-weight: bold;
+    padding-bottom: 0.5em;
+}
+
+
+dl dd {
+    font-weight: bold;
+    text-indent: unset;
+    padding: 0.5em 0em;
+}
+
+#tabelMandje {
+    width: 500px;
+    background-color: lightgray;
+    border: white solid 1px;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: dimgray;
+    color: white;
+    padding: 1em;
+    border: white solid 1px;
+    border-collapse: collapse;
+}
+
+#headerFilm {
+    widht: 300px;
+}
+
+#headerPrijs, #headerVerwijder {
+    width: 100px;
+}
+
+#tabelMandje tr td {
+    background-color: lightgray;
+    border: white solid 1px;
+    border-collapse: collapse;
+    padding: 0.5em;
+}
+
+#tabelMandje tr td:not(:first-child) {
+    text-align: center;
+}
+
+.klantContainer{
+    padding: 1em 0em;
+}
+
+#klantTable {
+    border: lightgray solid 1px;
+    border-collapse: collapse;
+}
+
+
+#headerNaam {
+    width: 250px;
+}
+
+#headerStraat{
+    width: 200px;
+}
+
+#headerPostcode {
+    width: 20px;
+}
+
+#headerGemeente {
+    width: 150px;
+}
+
+#klantTable tr td {
+    border: lightgray solid 1px;
+    border-collapse: collapse;
+    padding: 0.5em;
+}
+
+#klantTable tr:nth-child(odd){
+    background-color: lightgray;
+}
+
+.pageNotFound {
+    background-image: url("../img/404.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    color: firebrick;
+}
+
+.techError {
+    background-image: url("../img/500.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    color: firebrick;
+}
+
+.pageNotFound a, .techError a,
+.pageNotFound a:visited, .techError a:visited,
+.pageNotFound a:hover, .techError a:hover,
+.pageNotFound a:active, .techError a:active {
+    color: #BE0002;
+    font-weight: bold;
+}
+

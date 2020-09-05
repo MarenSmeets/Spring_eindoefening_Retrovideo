@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments::head(title='Mandje')"></head>
+
+<body>
+
+<nav th:replace="fragments::menu2"></nav>
+
+<h3 th:if="${filmsInMandje} == null">Uw mandje is leeg.</h3>
+
+
+<form th:if="${filmsInMandje} != null" method="post" th:action="@{/mandje/verwijderen}">
+    <table id="tabelMandje">
+        <tr>
+            <th id="headerFilm">Film</th>
+            <th id="headerPrijs">Prijs</th>
+            <th id="headerVerwijder"><button>Verwijderen</button></th>
+        </tr>
+        <tr th:each="film:${filmsInMandje}" th:object="${film}">
+            <td th:text="*{titel}"></td>
+            <td th:text="|&euro; *{prijs}|"></td>
+            <td><input type="checkbox" name="id" th:value="*{id}" multiple></td>
+        </tr>
+    </table>
+</form>
+
+
+
+
+</body>
+
+</html>
